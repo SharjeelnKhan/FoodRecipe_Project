@@ -1,0 +1,23 @@
+{% include 'recipes/navbar.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+
+            <p>Are you sure want to delete this {{recipe.name}}</p>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                <a class="btn btn-warning" href="{% url 'your_recipes' %}">Cancel</a>
+
+                <input class="btn btn-danger" type="submit" name="Confirm">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
